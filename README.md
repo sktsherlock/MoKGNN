@@ -19,4 +19,9 @@ We briefly introduce the GNN models and the language models we used in the main 
 **Mistral**.  Mistral 7B is an open source large model released by the Mistral AI team, which outperforms LLaMA 2 13B on many benchmarks.
 
 
+## Parameter Settings
+In the feature extraction phase, we set the maximal sequence length to 256 for LLM and 512 for PLM due to the limitation of the device. For fine-tuning, we set the batch-size, learning rate, and warmup ratio of PLM to 60, 2e-5, and 0.1, respectively.
+In the learning stage of GNN, we search its learning rate, dropout, number of layers, and hidden layers as [5e-3, 1e-3, 5e-4, 1e-4,], [0.2, 0.5], [2,3,4,5], [64, 128, 256] respectively.
+For our own method, we adjust the $\alpha$ that controls the importance of generic and task-specific knowledge during fusion.
+
 We will release our code soon.
